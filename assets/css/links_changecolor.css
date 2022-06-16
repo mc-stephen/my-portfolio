@@ -1,0 +1,297 @@
+:root{
+	--primary_colour : orange;
+}
+.red_colour{
+	--primary_colour: red;
+}
+.blue_colour{
+	--primary_colour: blue;
+}
+.gold_colour{
+	--primary_colour: gold;
+}
+.green_colour{
+	--primary_colour: green;
+}
+.brown_colour{
+	--primary_colour: brown;
+}
+.gray_colour{
+	--primary_colour: gray;
+}
+.skyblue_colour{
+	--primary_colour: skyblue;
+}
+.pink_colour{
+	--primary_colour: pink;
+}
+.purple_colour{
+	--primary_colour: purple;
+}
+/*for 000 web host branding*/
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{
+	display: none;
+}
+a{text-decoration: none;color: inherit;padding: 50px;width: 100%;}
+/*---------------------------------------------------------------------------
+for the lodder
+---------------------------------------------------------------------------*/
+.loader_wrapper{
+	background: #0d0d21;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.loader_wrapper .loader{
+	padding: 10px;
+	border-radius: 500px;
+	border: 2px solid red;
+	border-top: 0px;
+	border-bottom: 0px;
+	animation: animate_loader 1.5s ease-in infinite;
+}
+.loader_wrapper .moving_loader{
+	border-top: 5px solid gold;
+	border-bottom: 5px solid red;
+	border-left: 5px solid blue;
+	border-right: 5px solid #fff;
+	border-radius: 50px;
+	width: 50px;
+	height: 50px;
+	animation: animate 0.5s ease-in infinite;
+}
+@keyframes animate_loader{
+	0%{
+		transform: scale(underline);
+	}
+	50%{
+		transform: scale(2.5);
+	}
+	100%{
+		transform: scale(underline);
+	}
+}
+@keyframes animate{
+	from{
+	}
+	to{
+		transform: rotate(363deg);
+	}
+}
+/*--------------------------------------------------------------------------------
+for changing website bg/txt color
+---------------------------------------------------------------------------------*/
+section .color_icon_section{
+	position: fixed;
+	top: 30%;
+	display: flex;
+	flex-direction: row-reverse;
+	z-index: 5;
+	color: #000;
+}
+section .color_icon_section .close{
+	display: none;
+}
+section .btn_changecolor{
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+section .btn_changecolor:hover{
+	background: #555;
+}
+.spin{
+	-webkit-animation: spin 1s linear infinite;
+	-moz-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin{
+	from{-webkit-transform: rotate(0deg);}
+	to{-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin{
+	from{-webkit-transform: rotate(0deg);}
+	to{-webkit-transform: rotate(360deg);}
+}
+@keyframes spin{
+	from{-webkit-transform: rotate(0deg);}
+	to{-webkit-transform: rotate(360deg);}
+}
+section .color_changer_container{
+	position: relative;
+	width: 170px;
+	margin-left: -180px;
+	padding: 0px 5px 10px 5px;
+	border-radius: 0px 0px 5px 0px;
+	background: #f5f5f5;
+	transition: 0.5s;
+}
+/*this will only take effect when u click on the spin icon*/
+section .open{
+	margin-left: 0;
+}
+/*ends here*/
+section .color_changer_container .txt{
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 0px 12px 0px;
+	text-decoration: underline;
+}
+section .color_changer_container i{
+	position: relative;
+	padding: 5px;
+	cursor: pointer;
+}
+section .color_changer_container i:hover{
+	border-radius: 5px;
+	background: #888;
+}
+section .color_changer_container i:nth-child(2){
+	color: red;
+}
+section .color_changer_container i:nth-child(3){
+	color: blue;
+}
+section .color_changer_container i:nth-child(4){
+	color: green;
+}
+section .color_changer_container i:nth-child(5){
+	color: orange;
+}
+section .color_changer_container i:nth-child(6){
+	color: gold;
+}
+section .color_changer_container i:nth-child(7){
+	color: purple;
+}
+section .color_changer_container i:nth-child(8){
+	color: pink;
+}
+section .color_changer_container i:nth-child(9){
+	color: brown;
+}
+section .color_changer_container i:nth-child(10){
+	color: gray;
+}
+section .color_changer_container i:nth-child(11){
+	color: skyblue;
+}
+
+
+/*-----------------------------------------------------------------------------------
+for the open/close btn. only show on mobile version
+--------------------------------------------------------------------------------------*/
+.open_close{
+	position: fixed;
+	left: 0px;
+	top: 50%;
+	background: #fff;
+	width: 35px; 
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0px 5px 5px 0px;
+	color: #000;
+	z-index: 5;
+	display: none;
+}
+/*------------------------------------------------------------------------------
+for the links btn_icon
+--------------------------------------------------------------------------------*/
+section .links_icon_section{
+	position: fixed;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #fff;
+	z-index: 4;
+}
+section .links_icon_section .link_container{
+	display: flex;
+	justify-content: flex-end;
+	padding: 7px;
+}
+section .links_icon_section .link_container .active{
+	background: var(--primary_colour);
+	color: #fff;
+}
+section .links_icon_section .link_container i{
+	color: #fff;
+	width: 55px;
+	height: 55px;
+	display: flex;
+	cursor: pointer;
+	position: relative;
+	align-items: center;
+	border-radius: 50px;
+	background: #3d3d48;
+	justify-content: center;
+}
+section .links_icon_section .link_container i:hover{
+	opacity: 0.9;
+}
+section .links_icon_section .link_container span{
+	background: var(--primary_colour);
+	color: #fff;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 55px;
+	width: 0px;
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	right: -33px;
+	transition: 0.5s;
+	border-radius: 50px 0px 0px 50px;
+	text-align: center;
+}
+section .links_icon_section .link_container span:hover{
+	opacity: 0.9;
+}
+section .links_icon_section .link_container .close{
+	display: none;
+	background: var(--primary_colour);
+	color: #fff;
+}
+/*this only take effect when the link btn is click*/
+section .links_icon_section .link_container .toggle{
+	width: 200px;
+}
+section .links_icon_section .link_container .D_color{
+	background: var(--primary_colour);
+}
+/*ends here*/
+
+@media screen and (max-width: 600px){
+	section .links_icon_section{
+		right: 10px;
+		display: none;
+	}
+	i.open_close{
+		display: flex;
+	}
+	section .links_icon_section .link_container i{
+		width: 45px;
+		height: 45px;
+	}
+	section .links_icon_section .link_container span{
+		height: 45px;
+		right: -28px;
+	}
+
+}

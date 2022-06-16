@@ -1,0 +1,343 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+  font-family: "Nunito-Regular", Arial;
+  background: #0d0d21;
+  color: #f5f5f5;
+}
+section .header {
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+section .header h1 {
+  font-size: 70px;
+  margin: 0px;
+  color: #3d3d48;
+  text-align: center;
+  letter-spacing: 10px;
+}
+section .header h2 {
+  position: relative;
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+  margin-top: -80px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+section .header h2 b {
+  color: var(--primary_colour);
+}
+/*==========================================
+MY DETAILS AND PERSONAL INFO
+==========================================*/
+section .my_details_conn {
+  padding: 0 50px 0 100px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-family: monospace;
+}
+section .my_details_conn > div {
+  width: 45%;
+}
+section .my_details_conn .lft h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 0;
+}
+section .my_details_conn .lft .conn {
+  font-size: 15px;
+  line-height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Nunito-Regular", Arial;
+}
+section .my_details_conn .lft .conn li {
+  width: 50%;
+}
+section .my_details_conn .lft .conn li span {
+  color: #878787;
+}
+section .my_details_conn .lft a {
+  padding: 0;
+}
+section .my_details_conn .lft a input {
+  padding: 15px 50px;
+  border-radius: 10px 20px;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 20px 0;
+  background: var(--primary_colour);
+}
+section .my_details_conn .rit {
+  display: flex;
+  flex-wrap: wrap;
+}
+section .my_details_conn .rit .card {
+  width: 30%;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  margin: 0 10% 50px 0;
+  flex-direction: column;
+  border-top: 2px solid #3d3d48;
+  border-bottom: 2px solid #3d3d48;
+}
+section .my_details_conn .rit .card b {
+  font-size: 40px;
+  color: var(--primary_colour);
+}
+section .my_details_conn .rit .card span {
+  text-align: right;
+  text-transform: uppercase;
+  font-family: "Nunito-Regular", Arial;
+  font-size: 13px;
+}
+section .my_details_conn .rit .card span sup {
+  text-align: left;
+}
+/*==========================================
+MY SKILLS
+==========================================*/
+section .my_skills {
+  margin: 50px 0;
+}
+section .my_skills h3 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+section .my_skills .skills_conn {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+section .my_skills .skills_conn .skill_card {
+  width: 100px;
+  margin: 20px 50px;
+  text-transform: uppercase;
+  text-align: center;
+  height: 130px;
+}
+section .my_skills .skills_conn .skill_card .skill_percent {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  background: #3d3d48;
+}
+section .my_skills .skills_conn .skill_card .skill_percent .inner_cicle {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 100px;
+  font-family: "Nunito-Regular", Arial;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d0d21;
+  left: 5%;
+  top: 5%;
+}
+section .my_skills .skills_conn .skill_card .skill_percent .lft_progress,
+section .my_skills .skills_conn .skill_card .skill_percent .rit_progress {
+  width: 50%;
+  height: 100%;
+  align-self: flex-start;
+  background: var(--primary_colour);
+}
+section .my_skills .skills_conn .skill_card .skill_percent .lft_progress{
+  align-self: flex-end;
+}
+/* 90% */
+section .my_skills .skills_conn .skill_card.P90 .lft_progress{
+  height: 80%;
+}
+/* 80% */
+section .my_skills .skills_conn .skill_card.P80 .lft_progress{
+  height: 60%;
+}
+/* 75% */
+section .my_skills .skills_conn .skill_card.P75 .lft_progress{
+  height: 50%;
+}
+/* 70% */
+section .my_skills .skills_conn .skill_card.P70 .lft_progress{
+  height: 40%;
+}
+/* 60% */
+section .my_skills .skills_conn .skill_card.P60 .lft_progress{
+  height: 20%;
+}
+/* 50% */
+section .my_skills .skills_conn .skill_card.P50 .lft_progress{
+  height: 0%;
+}
+section .my_skills .skills_conn .skill_card.P50 .rit_progress{
+  height: 100%;
+}
+/* 40% */
+section .my_skills .skills_conn .skill_card.P40 .lft_progress{
+  height: 0%;
+}
+section .my_skills .skills_conn .skill_card.P40 .rit_progress{
+  height: 80%;
+}
+/* 30% */
+section .my_skills .skills_conn .skill_card.P30 .lft_progress{
+  height: 0%;
+}
+section .my_skills .skills_conn .skill_card.P30 .rit_progress{
+  height: 60%;
+}
+/* 20% */
+section .my_skills .skills_conn .skill_card.P20 .lft_progress{
+  height: 0%;
+}
+section .my_skills .skills_conn .skill_card.P20 .rit_progress{
+  height: 40%;
+}
+/* 10% */
+section .my_skills .skills_conn .skill_card.P10 .lft_progress{
+  height: 0%;
+}
+section .my_skills .skills_conn .skill_card.P10 .rit_progress{
+  height: 20%;
+}
+/**/
+section .my_skills .skills_conn .skill_card b {
+  font-size: 13px;
+  font-family: "Nunito-Regular", Arial;
+}
+/*==========================================
+MY EXPIRENCE AND EDUCATION
+==========================================*/
+section .exp_edu {
+  margin: 0 0 100px;
+  list-style: none;
+}
+section .exp_edu h3 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+section .exp_edu .conn {
+  padding: 0 100px;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section .exp_edu .conn .card {
+  width: 45%;
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+section .exp_edu .conn .card .icon {
+  padding: 10px 12px;
+  margin: 0 10px 0 0;
+  border-radius: 5px 10px;
+  background: var(--primary_colour);
+}
+section .exp_edu .conn .card .details .date {
+  font-size: 12px;
+  padding: 5px 10px 3.5px;
+  border-radius: 5px 10px;
+  background: #3d3d48;
+}
+section .exp_edu .conn .card .details .title {
+  font-family: monospace;
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+section .exp_edu .conn .card .details .title span {
+  font-size: 15px;
+  color: #cdcdcd;
+  font-family: "Nunito-Regular", Arial;
+}
+section .exp_edu .conn .card .details .about {
+  color: #f5f5f5;
+  line-height: 20px;
+  font-family: "Nunito-Regular", Arial;
+}
+section .exp_edu .conn .card .details .about::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #3d3d48;
+  position: absolute;
+  left: -30px;
+  top: 0;
+}
+/*==========================================
+MOBILE RESPONSIVENESS
+==========================================*/
+@media screen and (max-width: 600px) {
+  section .header h1 {
+    font-size: 55px;
+    margin-top: 9px;
+  }
+  section .header h2 {
+    font-size: 35px;
+    margin-top: -62px;
+  }
+  /*==========================================
+	MY DETAILS AND PERSONAL INFO
+	==========================================*/
+  section .my_details_conn {
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+  section .my_details_conn > div {
+    width: 100%;
+  }
+  section .my_details_conn .lft {
+    box-sizing: border-box;
+    padding-left: 30px;
+  }
+  section .my_details_conn .lft .conn li {
+    width: 100%;
+  }
+  section .my_details_conn .rit {
+    margin: 0 0 20px;
+    justify-content: center;
+  }
+  section .my_details_conn .rit .card {
+    margin: 10px;
+  }
+  /*==========================================
+	MY SKILLS
+	==========================================*/
+  section .my_skills .skills_conn {
+    padding: 0 10px;
+    justify-content: space-around;
+  }
+  section .my_skills .skills_conn .skill_card {
+    margin: 20px 20px;
+  }
+  /*==========================================
+	MY EXPIRENCE AND EDUCATION
+	==========================================*/
+  section .exp_edu .conn {
+    padding: 0 10px;
+    flex-direction: column;
+  }
+  section .exp_edu .conn .card {
+    width: 100%;
+  }
+}

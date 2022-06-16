@@ -1,0 +1,127 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+  font-family: "Nunito-Regular", Arial;
+  background: #0d0d21;
+  color: #f5f5f5;
+}
+section .header {
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+section .header h1 {
+  font-size: 70px;
+  margin: 0px;
+  color: #3d3d48;
+  text-align: center;
+  letter-spacing: 10px;
+}
+section .header h2 {
+  position: relative;
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+  margin-top: -80px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+section .header h2 b {
+  color: var(--primary_colour);
+}
+/*  */
+section .blogs_container {
+  width: 85%;
+  position: relative;
+  margin-top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 20px;
+}
+.blogs_container .all_blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.blogs_container .all_blog .blog {
+  width: 320px;
+  background: #3d3d48;
+  margin: 0px 10px 20px 10px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: 0.6s;
+}
+.blogs_container .all_blog .blog:hover {
+  transform: scale(1.05);
+}
+.blogs_container .all_blog .blog img {
+  width: 100%;
+  height: 190px;
+  border: gold;
+  border-bottom: 5px solid var(--primary_colour);
+  transition: 0.6s;
+}
+.blogs_container .all_blog .blog .blog_txt {
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.blogs_container .all_blog .blog .blog_txt h3 {
+  line-height: 25px;
+}
+.blogs_container .all_blog .blog .blog_txt h3:hover {
+  color: var(--primary_colour);
+}
+.blogs_container .all_blog .blog .blog_txt span {
+  line-height: 22px;
+  font-size: 13px;
+}
+.blogs_container .all_blog .blog a {
+  padding: 0px;
+}
+/*for the blog two*/
+.blogs_container .blog_2 {
+  display: none;
+}
+/* ends here */
+.all_pages_links {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.all_pages_links li {
+  border-radius: 10px 20px;
+  padding: 20px 25px;
+  cursor: pointer;
+  background: #3d3d48;
+  list-style: none;
+  margin: 10px;
+}
+.all_pages_links li:nth-child(1) {
+  background: var(--primary_colour);
+}
+
+@media screen and (max-width: 600px) {
+  section .header h1 {
+    font-size: 55px;
+    margin-top: 9px;
+  }
+  section .header h2 {
+    font-size: 35px;
+    margin-top: -60px;
+  }
+  section .blogs_container {
+    width: 90%;
+  }
+  .blogs_container .all_blog .blog {
+    width: 100%;
+    margin: 0px 10px 20px 10px;
+  }
+  .blogs_container .all_blog .blog img {
+    height: auto;
+  }
+}

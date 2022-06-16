@@ -1,0 +1,136 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+  font-family: "Nunito-Regular", Arial;
+  background: #0d0d21;
+}
+section {
+  width: 100vw;
+}
+/*--------------------------------------------------------------------
+for the slid_half bg u see
+---------------------------------------------------------------------*/
+.half_bg {
+  display: flex;
+  position: absolute;
+  top: 0px;
+}
+section .first_half {
+  width: 50px;
+  height: 100vh;
+  background: var(--primary_colour);
+}
+section .half_bg_color {
+  width: 350px;
+  height: 100vh;
+  background: var(--primary_colour);
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+}
+/*--------------------------------------------------------------------------------------
+for my info and pics
+--------------------------------------------------------------------------------------*/
+.pics_txt_section {
+  position: absolute;
+  display: flex;
+  top: 0px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pics_txt_section .profile_img {
+  width: 45%;
+}
+.pics_txt_section .profile_img img {
+  border-radius: 5px;
+  margin-left: 25px;
+  height: 100%;
+  box-shadow: 0px 1px 10px 1px #2c2d336b;
+}
+.pics_txt_section .profile_bio {
+  box-sizing: border-box;
+  width: 48%;
+  padding: 20px;
+  overflow-wrap: break-word;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pics_txt_section .profile_bio h1 {
+  font-size: 45px;
+  margin: 10px 0px 20px 0px;
+  line-height: 45px;
+}
+.pics_txt_section .profile_bio h1 b {
+  color: var(--primary_colour);
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+.pics_txt_section .profile_bio .my_bio {
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  padding-bottom: 50px;
+}
+.pics_txt_section .profile_bio button {
+  width: 250px;
+  height: 45px;
+  border: none;
+  background: var(--primary_colour);
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px 20px 10px 20px;
+  transition: 0.5s;
+  font-family: "Nunito-Regular", Arial;
+}
+.pics_txt_section .profile_bio button i {
+  display: none;
+}
+.pics_txt_section .profile_bio button:hover {
+  opacity: 0.9;
+  border: 2px transparent;
+}
+.pics_txt_section .profile_bio button:hover i {
+  display: inline;
+  margin-left: 5px;
+}
+
+/*--------------------------------------------------------------------------------------
+For the mobile version
+---------------------------------------------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  /*--------------------------------------------------------------------
+	for the slid_half bg u see
+	---------------------------------------------------------------------*/
+  .half_bg {
+    display: block;
+  }
+  section .first_half {
+    display: none;
+  }
+  section .half_bg_color {
+    width: 100vw;
+    height: 80vh;
+    clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+  }
+  /*--------------------------------------------------------------------------------------
+	for my info and pics
+	--------------------------------------------------------------------------------------*/
+  .pics_txt_section {
+    display: block;
+  }
+  .pics_txt_section .profile_img {
+    width: 100%;
+  }
+  .pics_txt_section .profile_img img {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .pics_txt_section .profile_bio {
+    width: 100%;
+    padding: 20px;
+  }
+}
