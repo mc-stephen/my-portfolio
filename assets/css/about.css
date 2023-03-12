@@ -115,10 +115,10 @@ section .my_skills h3 {
 }
 section .my_skills .skills_conn {
   display: flex;
-  justify-content: space-between;
-  padding: 0 100px;
   flex-wrap: wrap;
+  padding: 0 100px;
   margin-top: 50px;
+  justify-content: space-evenly;
 }
 section .my_skills .skills_conn .skill_card {
   width: 100px;
