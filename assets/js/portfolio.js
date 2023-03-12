@@ -3,7 +3,7 @@
 //================================================
 const arrOfProject = [
   {
-    imgSrc: "assets/img/quiz.PNG",
+    imgSrc: "assets/img/quiz.png",
     title: "Quiz Web Application",
     details:
       "A cool looking javascript online Quiz web application (HTML5, CSS3, JS)",
