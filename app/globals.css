@@ -324,6 +324,7 @@ aside {
 \*-----------------------------------*/
 main {
   width: 900px;
+  display: flex;
   overflow: hidden;
   position: relative;
   border-radius: 20px;
@@ -334,13 +335,13 @@ main {
   min-height: var(--main-min-height);
 
   & > nav {
+    right: 0;
     width: 60%;
     z-index: 1;
-    float: right;
     height: 65px;
     display: flex;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     align-items: center;
     font-weight: var(--fw-400);
     backdrop-filter: blur(10px);

@@ -1,12 +1,14 @@
 .portfolio {
-  margin: 30px 0;
+  gap: 30px;
+  width: 100%;
+  display: flex;
+  padding: 30px;
   flex-direction: column;
   animation: fade 0.5s ease backwards;
 
   & > h2 {
     font-size: 30px;
     position: relative;
-    margin: 0 30px 30px;
     padding-bottom: 20px;
     color: var(--white-2);
     text-transform: capitalize;
@@ -29,7 +31,6 @@
   > .tabs {
     gap: 25px;
     display: flex;
-    margin: 0 30px 30px;
     align-items: center;
 
     & > li {
@@ -52,17 +53,16 @@
   /*  */
   /*======================*/
   > .tabContent {
+    flex: 1;
     gap: 30px;
     display: flex;
-    margin: 0 30px;
     flex-wrap: wrap;
-    align-items: stretch;
 
     > .card {
       width: 100%;
       cursor: pointer;
       min-width: 200px;
-      animation: scaleUp 0.30s ease forwards;
+      animation: scaleUp 0.3s ease forwards;
       max-width: calc((900px - 60px - 65px) / 3);
 
       &:hover {
@@ -143,12 +143,100 @@
       }
     }
   }
+
+  /*======================*/
+  /*  */
+  /*======================*/
+  > .pagination {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & > li {
+      z-index: 1;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      cursor: pointer;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-4);
+      border-radius: 14px 0 0 14px;
+      border: 1px solid var(--onyx);
+      color: var(--orange-yellow-crayola);
+      background: var(--border-gradient-onyx);
+
+      &:last-child {
+        border-radius: 0 14px 14px 0;
+      }
+
+      &::before {
+        inset: 1px;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        background: var(--bg-gradient-jet);
+      }
+    }
+
+    > .numbering {
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      min-width: 50px;
+      position: relative;
+      align-items: center;
+      /* border-radius: 14px; */
+      background: var(--bg-gradient-jet);
+
+      &::before {
+        inset: 1px;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        background: var(--bg-gradient-onyx);
+      }
+
+      & > li {
+        width: 50px;
+        display: flex;
+        height: inherit;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid var(--onyx);
+
+        &:last-child {
+          border-right: unset;
+        }
+      }
+    }
+  }
 }
 
 /*-----------------------------------*\
   #ANIMATION
 \*-----------------------------------*/
 @keyframes scaleUp {
-  0% { transform: scale(0.5); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*-----------------------------------*\
+  ANIMATION
+\*-----------------------------------*/
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
