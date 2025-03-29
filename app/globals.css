@@ -152,16 +152,7 @@ button {
   font: inherit;
   cursor: pointer;
   background: none;
-  /* text-align: left; */
 }
-
-/* input,
-textarea {
-  display: block;
-  width: 100%;
-  background: none;
-  font: inherit;
-} */
 
 ::selection {
   color: var(--smoky-black);

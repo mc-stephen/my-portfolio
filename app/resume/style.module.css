@@ -1,0 +1,39 @@
+.resume {
+  gap: 30px;
+  width: 100%;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  animation: fade 0.5s ease backwards;
+
+  & > h2 {
+    font-size: 30px;
+    position: relative;
+    padding-bottom: 20px;
+    color: var(--white-2);
+    text-transform: capitalize;
+
+    &::after {
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      content: "";
+      height: 5px;
+      position: absolute;
+      border-radius: 5px;
+      background: var(--text-gradient-yellow);
+    }
+  }
+}
+
+/*-----------------------------------*\
+  ANIMATION
+\*-----------------------------------*/
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -11,10 +11,11 @@ export default function Contact() {
       <section className={styles.mapSection}>
         <figure>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-            width="400"
-            height="300"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126846.01084595696!2d3.3635289999999998!3d6.529535450000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9228fa2a3999%3A0xd7a8324bddbba1f0!2sIkeja%2C%20Lagos!5e0!3m2!1sen!2sng!4v1743276915584!5m2!1sen!2sng"
+            referrerPolicy="no-referrer-when-downgrade"
             loading="lazy"
+            height="450"
+            width="300"
           ></iframe>
         </figure>
       </section>
