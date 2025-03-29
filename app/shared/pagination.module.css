@@ -1,0 +1,82 @@
+.pagination {
+  gap: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  & > li {
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    box-shadow: var(--shadow-4);
+    border: 1px solid var(--onyx);
+    color: var(--orange-yellow-crayola);
+    background: var(--border-gradient-onyx);
+
+    &::before {
+      inset: 1px;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      background: var(--bg-gradient-jet);
+    }
+  }
+
+  > .numbering {
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--bg-gradient-onyx);
+
+    &::before {
+      inset: 1px;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      border-radius: inherit;
+      background: var(--bg-gradient-jet);
+    }
+
+    & > li {
+      z-index: 1;
+      width: 50px;
+      display: flex;
+      cursor: pointer;
+      height: inherit;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--onyx);
+
+      &.active {
+        color: var(--onyx);
+        background: var(--orange-yellow-crayola);
+      }
+
+      &:is(:not(.active)):hover::before {
+        inset: 1px;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+        background: var(--bg-gradient-onyx);
+      }
+
+      &:last-child {
+        border-right: unset;
+      }
+    }
+  }
+}

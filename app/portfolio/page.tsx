@@ -2,33 +2,50 @@
 
 import Image from "next/image";
 import styles from "./style.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import PaginationComponent from "../shared/pagination-component";
 
 export default function Portfolio() {
   const maxShownProjects = 6;
-  const paginationLength = useRef(1);
+  const [pagination, setPagination] = useState<number[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [projects, setProjects] = useState<Record<string, string>[]>([]);
   const [selectedTab, setSelectedTab] = useState(PortfolioTab.all.valueOf());
 
-  function pagination(index: number) {
+  //=============================
+  //
+  //=============================
+  function setPaginationIndex(index: number) {
     const nxtPageIndex = currentIndex + index;
-    console.log(nxtPageIndex);
-
-    if (nxtPageIndex >= 0 && nxtPageIndex < projects.length) {
+    if (nxtPageIndex >= 0 && nxtPageIndex < pagination.length) {
       setCurrentIndex(currentIndex + index);
     }
   }
 
-  useEffect(() => {
-    const allIsSelected = selectedTab === PortfolioTab.all;
-    const values = allIsSelected
-      ? Object.values(portfolio).flat() // Flatten all projects if "All" is selected
-      : portfolio[selectedTab] || []; // Get selected category
+  //=============================
+  //
+  //=============================
+  function openLink(link: string) {
+    window.open(link, "_blank", "noopener,noreferrer");
+  }
 
+  //=============================
+  //
+  //=============================
+  useEffect(() => {
+    const values =
+      selectedTab === PortfolioTab.all
+        ? Object.values(portfolio).flat() // Flatten all projects if "All" is selected
+        : portfolio[selectedTab] || []; // Get selected category
+
+    const total = Math.ceil(values.length / maxShownProjects);
+    setPagination([...Array(total).keys()]);
     setProjects(values);
   }, [selectedTab]);
 
+  //=============================
+  //
+  //=============================
   return (
     <div className={styles.portfolio}>
       <h2>Portfolio</h2>
@@ -60,7 +77,11 @@ export default function Portfolio() {
           const max = maxShownProjects * (currentIndex + 1);
           if (i >= min && i < max) {
             return (
-              <div key={i} className={styles.card}>
+              <div
+                key={i}
+                className={styles.card}
+                onClick={() => openLink(val.url)}
+              >
                 <div className={styles.imgCont}>
                   <Image src={val.image} alt={val.title} fill />
                   <div className={styles.frontLayer}>
@@ -78,27 +99,12 @@ export default function Portfolio() {
       {/*==================*/}
       {/*  */}
       {/*==================*/}
-      {}
-      <ul className={styles.pagination}>
-        <li onClick={() => pagination(-1)}>
-          <i className="fa-solid fa-angle-left"></i>
-        </li>
-
-        <ul className={styles.numbering}>
-          {new Array(paginationLength.current).fill(0).map((val, i) => {
-            // const pagination = (projects.length / maxShownProjects).toFixed();
-            return (
-              <li key={i} onClick={() => setCurrentIndex(i + 1)}>
-                {i + 1}
-              </li>
-            );
-          })}
-        </ul>
-
-        <li onClick={() => pagination(+1)}>
-          <i className="fa-solid fa-angle-right"></i>
-        </li>
-      </ul>
+      <PaginationComponent
+        pagination={pagination}
+        currentIndex={currentIndex}
+        setIndex={(v) => setCurrentIndex(v)}
+        setPagination={(i) => setPaginationIndex(i)}
+      />
     </div>
   );
 }
