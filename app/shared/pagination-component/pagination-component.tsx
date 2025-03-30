@@ -1,4 +1,4 @@
-import styles from "./pagination.module.css";
+import styles from "./style.module.css";
 
 export default function PaginationComponent({
   setIndex,

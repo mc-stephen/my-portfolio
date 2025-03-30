@@ -1,6 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./style.module.css";
+import LoadingComponent from "../shared/loading-component/loading-component";
 
 export default function Contact() {
+  const [message, setMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  //============================
+  //
+  //============================
+  function handleFormRequest() {
+    // "Message sent successfully"
+    alert(0);
+  }
+
   return (
     <div className={styles.contact}>
       <h2>Contact</h2>
@@ -25,7 +40,9 @@ export default function Contact() {
       {/*============================*/}
       <section className={styles.formSection}>
         <h3>Contact Form</h3>
-        <form action="">
+        {isLoading ?? <LoadingComponent />}
+        {message ?? <span className={styles.msg}>{message}</span>}
+        <form>
           <input
             required
             type="text"
@@ -48,7 +65,7 @@ export default function Contact() {
         {/*============================*/}
         {/*  */}
         {/*============================*/}
-        <button disabled>
+        <button disabled onClick={handleFormRequest}>
           <i className="fa-solid fa-paper-plane"></i>
           <span>Send Message</span>
         </button>

@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./style.module.css";
 import { useEffect, useState } from "react";
-import PaginationComponent from "../shared/pagination-component";
+import PaginationComponent from "../shared/pagination-component/pagination-component";
+import LoadingComponent from "../shared/loading-component/loading-component";
 
 export default function Blog() {
   const maxShownProjects = 4;
@@ -74,7 +75,7 @@ export default function Blog() {
       {/*=====================*/}
       {
         <section className={styles.blogsSection}>
-          {isLoading ? <div className={styles.loader} /> : <></>}
+          {isLoading ? <LoadingComponent /> : <></>}
           <div className={styles.blogFlex}>
             {blogData.map((val, i) => {
               const date = new Date(val.date_updated);

@@ -34,25 +34,6 @@
     display: flex;
     flex-direction: column;
 
-    > .loader {
-      width: 100%;
-      height: 4px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 2px;
-      background: var(--onyx);
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 40%;
-        height: 100%;
-        border-radius: 2px;
-        background: var(--orange-yellow-crayola);
-        animation: loading-bar 1.5s infinite linear;
-      }
-    }
-
     > .blogFlex {
       gap: 20px;
       display: flex;
@@ -161,22 +142,5 @@
   }
   100% {
     opacity: 1;
-  }
-}
-
-/*-----------------------------------*\
-    ANIMATION
-\*-----------------------------------*/
-@keyframes loading-bar {
-  0% {
-    left: -40%;
-    width: 10%;
-  }
-  50% {
-    width: 50%;
-  }
-  100% {
-    left: 100%;
-    width: 20%;
   }
 }

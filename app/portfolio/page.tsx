@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./style.module.css";
 import { useEffect, useState } from "react";
-import PaginationComponent from "../shared/pagination-component";
+import PaginationComponent from "../shared/pagination-component/pagination-component";
 
 export default function Portfolio() {
   const maxShownProjects = 6;
