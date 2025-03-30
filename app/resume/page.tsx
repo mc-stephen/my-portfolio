@@ -109,11 +109,7 @@ const skills = [
   },
   {
     percentage: 40,
-    skill: "Desktop Development",
-  },
-  {
-    percentage: 20,
-    skill: "Game Development",
+    skill: "Desktop / Game Development",
   },
   {
     percentage: 10,

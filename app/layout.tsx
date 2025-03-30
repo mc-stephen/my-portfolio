@@ -188,7 +188,8 @@ const contacts = [
   {
     label: "Birthday",
     icon: <i className="fa-regular fa-calendar-days"></i>,
-    value: <time dateTime="2001-01-24">Jan 24, 2001</time>,
+    value: <time dateTime="2001-01-24">January 24th</time>,
+    // value: <time dateTime="2001-01-24">Jan 24, 2001</time>,
   },
   {
     label: "Location",

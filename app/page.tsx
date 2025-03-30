@@ -7,11 +7,17 @@ import "swiper/css/navigation";
 import Swiper from "swiper";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
 import styles from "./page.module.css";
+import { useEffect, useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
 
 export default function Home() {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [selectedTestimonies, setSelectedTestimonies] = useState({});
+
+  //=============================
+  //
+  //=============================
   useEffect(() => {
     new Swiper(".swiper", {
       loop: true,
@@ -26,13 +32,22 @@ export default function Home() {
       },
     });
   });
+
+  //=============================
+  //
+  //=============================
+  function showPopover(testimony: Record<string, string>) {
+    setSelectedTestimonies(testimony);
+    dialog.current?.showModal();
+  }
+
   return (
     <div className={styles.aboutMe}>
       <h2>About Me</h2>
-      <Testimonies />
+      <Testimonies dialog={dialog} testimonies={selectedTestimonies} />
 
       {/*==================================*/}
-      {/*  */}
+      {/* ABOUT ME */}
       {/*==================================*/}
       <section className={styles.info}>
         <p>
@@ -53,7 +68,7 @@ export default function Home() {
       </section>
 
       {/*==================================*/}
-      {/*  */}
+      {/* MY SKILL */}
       {/*==================================*/}
       <section className={styles.services}>
         <h3>What i&apos;m doing</h3>
@@ -73,7 +88,7 @@ export default function Home() {
       </section>
 
       {/*==================================*/}
-      {/*  */}
+      {/* TESTIMONIES */}
       {/*==================================*/}
       <section className={styles.testimonies}>
         <h3>Testimonials</h3>
@@ -82,13 +97,17 @@ export default function Home() {
           <div className="swiper-wrapper">
             {testimonies.map((testimony, i) => {
               return (
-                <div key={i} onClick={() => {}} className="swiper-slide">
+                <div
+                  key={i}
+                  className="swiper-slide"
+                  onClick={() => showPopover(testimony)}
+                >
                   <div className={styles.avatar}>
                     <Image
-                      src={testimony.img}
-                      alt="Daniel lewis"
                       width={60}
                       height={60}
+                      src={testimony.img}
+                      alt={testimony.name}
                     />
                   </div>
                   <h4>{testimony.name}</h4>
@@ -104,7 +123,7 @@ export default function Home() {
       </section>
 
       {/*==================================*/}
-      {/*  */}
+      {/* CLIENTS */}
       {/*==================================*/}
       <section className={styles.clients}>
         <h3>Clients</h3>
@@ -112,7 +131,7 @@ export default function Home() {
           {clients.map((client, i) => {
             return (
               <Link href={client.url} key={i} className={styles.link}>
-                <Image src={client.image} alt={client.label} fill/>
+                <Image src={client.image} alt={client.label} fill />
               </Link>
             );
           })}
@@ -125,8 +144,18 @@ export default function Home() {
 //===========================
 //
 //===========================
-function Testimonies() {
-  return <div className={styles.testimoniesDialog}></div>;
+function Testimonies({
+  dialog,
+  testimonies,
+}: {
+  testimonies: Record<string, string>;
+  dialog: React.RefObject<HTMLDialogElement | null>;
+}) {
+  return (
+    <dialog ref={dialog} popover="auto">
+      {testimonies["comment"]}
+    </dialog>
+  );
 }
 
 //===========================
