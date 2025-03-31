@@ -24,6 +24,85 @@
     }
   }
 
+  /*===================*/
+  /* TESTIMONIES DIALOG */
+  /*===================*/
+  .testimoniesDialog {
+    gap: 20px;
+    display: flex;
+    padding: 30px;
+
+    & > button {
+      top: 15px;
+      right: 15px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      position: absolute;
+      border-radius: 8px;
+      align-items: center;
+      background: var(--onyx);
+      justify-content: center;
+
+      & > i {
+        opacity: 0.7;
+        font-size: 18px;
+        color: var(--white-2);
+
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+      }
+    }
+
+    > .modalImg {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      & > figure {
+        width: max-content;
+        border-radius: 14px;
+        margin-bottom: 15px;
+        box-shadow: var(--shadow-2);
+        background: var(--bg-gradient-onyx);
+      }
+
+      & > i {
+        font-size: 40px;
+        color: var(--orange-yellow-crayola);
+      }
+    }
+
+    > .modalContent {
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+
+      & > h4 {
+        color: var(--white-2);
+        font-size: var(--fs-1);
+        text-transform: capitalize;
+      }
+
+      & > time {
+        font-size: var(--fs-5);
+        color: var(--light-gray-70);
+        font-weight: var(--fw-300);
+      }
+
+      & > p {
+        color: var(--light-gray);
+        font-size: var(--fs-5);
+        font-weight: var(--fw-300);
+        line-height: 1.6;
+      }
+    }
+  }
+
+  /*===================*/
   & > section {
     gap: 20px;
     display: flex;

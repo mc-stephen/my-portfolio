@@ -8,12 +8,15 @@ import Swiper from "swiper";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useEffect, useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
+import { useEffect, useRef, useState } from "react";
+import Testimonies from "./shared/popup-dialog/dialog";
 
 export default function Home() {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [selectedTestimonies, setSelectedTestimonies] = useState({});
+  const [selectedTestimonies, setSelectedTestimonies] = useState<
+    Record<string, string>
+  >({});
 
   //=============================
   //
@@ -44,7 +47,36 @@ export default function Home() {
   return (
     <div className={styles.aboutMe}>
       <h2>About Me</h2>
-      <Testimonies dialog={dialog} testimonies={selectedTestimonies} />
+      <Testimonies
+        dialog={dialog}
+        child={
+          <div className={styles.testimoniesDialog}>
+            <button className={styles.modalCloseBtn}>
+              <i className="fa-solid fa-xmark" />
+            </button>
+
+            <div className={styles.modalImg}>
+              <figure>
+                <Image
+                  width={80}
+                  height={80}
+                  src={selectedTestimonies["img"]}
+                  alt={selectedTestimonies["name"]}
+                />
+              </figure>
+              <i className="fa-solid fa-quote-left" />
+            </div>
+
+            <div className={styles.modalContent}>
+              <h4 className="h3 modal-title">{selectedTestimonies["name"]}</h4>
+              <time dateTime="2021-06-14">
+                {selectedTestimonies["date-created"]}
+              </time>
+              <p>{selectedTestimonies["comment"]}</p>
+            </div>
+          </div>
+        }
+      />
 
       {/*==================================*/}
       {/* ABOUT ME */}
@@ -138,23 +170,6 @@ export default function Home() {
         </div>
       </section>
     </div>
-  );
-}
-
-//===========================
-//
-//===========================
-function Testimonies({
-  dialog,
-  testimonies,
-}: {
-  testimonies: Record<string, string>;
-  dialog: React.RefObject<HTMLDialogElement | null>;
-}) {
-  return (
-    <dialog ref={dialog} popover="auto">
-      {testimonies["comment"]}
-    </dialog>
   );
 }
 
