@@ -51,7 +51,10 @@ export default function Home() {
         dialog={dialog}
         child={
           <div className={styles.testimoniesDialog}>
-            <button className={styles.modalCloseBtn}>
+            <button
+              className={styles.modalCloseBtn}
+              onClick={() => dialog.current?.close()}
+            >
               <i className="fa-solid fa-xmark" />
             </button>
 
@@ -60,8 +63,8 @@ export default function Home() {
                 <Image
                   width={80}
                   height={80}
-                  src={selectedTestimonies["img"]}
-                  alt={selectedTestimonies["name"]}
+                  src={selectedTestimonies["img"] ?? "x"}
+                  alt={selectedTestimonies["name"] ?? "x"}
                 />
               </figure>
               <i className="fa-solid fa-quote-left" />

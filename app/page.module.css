@@ -1,5 +1,5 @@
 .aboutMe {
-  width: inherit;
+  width: 100%;
   padding-top: 30px;
   flex-direction: column;
   animation: fade 0.5s ease backwards;
@@ -28,7 +28,7 @@
   /* TESTIMONIES DIALOG */
   /*===================*/
   .testimoniesDialog {
-    gap: 20px;
+    gap: 30px;
     display: flex;
     padding: 30px;
 
@@ -44,15 +44,16 @@
       background: var(--onyx);
       justify-content: center;
 
+      &:hover {
+        & > i {
+          opacity: 1;
+        }
+      }
+
       & > i {
         opacity: 0.7;
         font-size: 18px;
         color: var(--white-2);
-
-        &:hover,
-        &:focus {
-          opacity: 1;
-        }
       }
     }
 
@@ -88,9 +89,10 @@
       }
 
       & > time {
+        margin-bottom: 5px;
         font-size: var(--fs-5);
-        color: var(--light-gray-70);
         font-weight: var(--fw-300);
+        color: var(--light-gray-70);
       }
 
       & > p {

@@ -12,8 +12,8 @@ export default function Contact() {
   //
   //============================
   function handleFormRequest() {
-    // "Message sent successfully"
-    alert(0);
+    setIsLoading(true);
+    setMessage("Message sent successfully");
   }
 
   return (

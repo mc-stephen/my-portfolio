@@ -29,12 +29,23 @@ export default function RootLayout({
   const pathname = usePathname();
   const asideRef = useRef<HTMLElement>(null);
   const [mainMinHeight, setMainMinHeight] = useState("0px");
+  const [openSidebar, setOpenSideBar] = useState<boolean>(true);
 
+  //==================================
+  //
+  //==================================
   useEffect(() => {
     if (asideRef.current != null) {
       setMainMinHeight(asideRef.current.clientHeight + "px");
     }
   }, [setMainMinHeight]);
+
+  //==================================
+  //
+  //==================================
+  function toggleSideBar() {
+    setOpenSideBar(!openSidebar);
+  }
 
   return (
     <html lang="en">
@@ -42,9 +53,14 @@ export default function RootLayout({
         {/*-----------------------------------*/}
         {/* #ASIDE */}
         {/*-----------------------------------*/}
-        <aside ref={asideRef}>
+        <aside ref={asideRef} className={`${openSidebar}`}>
+          <button onClick={toggleSideBar}>
+            <i className="fa-solid fa-angle-down" />
+            <span>Show Contacts</span>
+          </button>
+
           <div className="profile">
-            <figure> 
+            <figure>
               <Image
                 width={80}
                 height={80}
@@ -57,8 +73,6 @@ export default function RootLayout({
               <h1 title="Chukwuemeka Michael">Stephen Michael C.</h1>
               <span className="title">Mobile / Web Developer</span>
             </div>
-
-            <button>Show Contacts</button>
           </div>
 
           <hr />
@@ -188,7 +202,7 @@ const contacts = [
   {
     label: "Birthday",
     icon: <i className="fa-regular fa-calendar-days"></i>,
-    value: <time dateTime="2001-01-24">January 24th</time>,
+    value: <time>24th, January</time>,
     // value: <time dateTime="2001-01-24">Jan 24, 2001</time>,
   },
   {
