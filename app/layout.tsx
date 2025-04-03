@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    site: "@mc-stephen", // Change to your Twitter handle if you have one
+    site: "@mc-stephen123", // Change to your Twitter handle if you have one
     creator: "@mc-stephen",
     card: "summary_large_image",
     title: "Chukwuemeka Stephen Michael | Software Engineer",

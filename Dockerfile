@@ -26,8 +26,8 @@ RUN rm -rf ./*
 # Copy the generated static site from the build stage
 COPY --from=builder /app/out .
 
-# Expose port 80 for serving the site
-EXPOSE 80
+# Expose port 3000 for serving the site
+EXPOSE 3000
 
 # Start NGINX
 CMD ["nginx", "-g", "daemon off;"]

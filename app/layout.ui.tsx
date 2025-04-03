@@ -158,6 +158,11 @@ const socials = [
     icon: <i className="fa-brands fa-github-alt"></i>,
     url: "https://github.com/mc-stephen",
   },
+  {
+    label: "X-Twitter",
+    icon: <i className="fa-brands fa-x-twitter"></i>,
+    url: "https://x.com/mc_stephen123",
+  },
 ];
 
 //===========================
