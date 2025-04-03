@@ -29,7 +29,7 @@ RUN rm -rf ./*
 # Copy the static output from Next.js
 COPY --from=builder /app/.next/static ./static
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
+# COPY --from=builder /app/.next/standalone ./
 
 # Set custom NGINX config to handle routing
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
