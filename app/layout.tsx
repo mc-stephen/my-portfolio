@@ -5,11 +5,11 @@ import LayoutUi from "./layout.ui";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
+  display: "swap", // Ensure it loads properly
+  preload: false, // Prevents Next.js from preloading it at build time
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: ["300", "400", "500", "600"],
-  display: "swap", // Ensure it loads properly
-  preload: false, // Prevents Next.js from preloading it at build time
 });
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Chukwuemeka Stephen Michael",
-        url: "https://mc-stephen.com/og-image.jpg", // Replace with your Open Graph image
+        url: "https://mc-stephen.com/mc-stephen.jpg",
       },
     ],
   },
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     site: "@mc-stephen123", // Change to your Twitter handle if you have one
     creator: "@mc-stephen",
     card: "summary_large_image",
+    images: ["https://mc-stephen.com/mc-stephen.jpg"],
     title: "Chukwuemeka Stephen Michael | Software Engineer",
-    images: ["https://mc-stephen.com/twitter-image.jpg"], // Replace with your Twitter card image
     description:
       "A software engineer specializing in modern web development, performance optimization, and scalable architecture.",
   },
