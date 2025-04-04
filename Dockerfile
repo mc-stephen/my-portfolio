@@ -3,9 +3,10 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Copy package files and install ALL dependencies (including devDependencies)
 COPY package*.json ./
-RUN npm ci --omit=dev
+COPY tsconfig*.json ./
+RUN npm ci
 
 # Copy source files and build
 COPY . .
