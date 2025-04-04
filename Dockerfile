@@ -1,7 +1,32 @@
+# Stage 1: Build the Next.js application
 FROM node:18-alpine AS builder
-WORK /app
-COPY . .
-RUN npm install && npm run build
 
-FROM nginx:alpine
-COPY --from=builder /app/out /usr/share/nginx/html
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Copy source files and build
+COPY . .
+RUN npm run build
+
+# Stage 2: Create production image
+FROM node:18-alpine AS production
+
+WORKDIR /app
+
+# Create non-root user
+# RUN addgroup -g 1001 -S nextjs && \
+#     adduser -S -u 1001 nextjs -G nextjs
+
+# Copy necessary files from builder
+COPY --from=builder --chown=nextjs:nextjs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nextjs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nextjs /app/public ./public
+
+USER nextjs
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
