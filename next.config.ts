@@ -1,9 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: 'export',
-  // output: "standalone",
-  // images: { unoptimized: true },
+  images: {
+    remotePatterns: [
+      {
+        port: "",
+        search: "",
+        protocol: "https",
+        pathname: "/assets/**",
+        hostname: "directus.axxellance.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

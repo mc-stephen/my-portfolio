@@ -50,34 +50,38 @@ export default function Home() {
       <Testimonies
         dialog={dialog}
         child={
-          <div className={styles.testimoniesDialog}>
-            <button
-              className={styles.modalCloseBtn}
-              onClick={() => dialog.current?.close()}
-            >
-              <i className="fa-solid fa-xmark" />
-            </button>
+          Object.keys(selectedTestimonies).length != 0 && (
+            <div className={styles.testimoniesDialog}>
+              <button
+                className={styles.modalCloseBtn}
+                onClick={() => dialog.current?.close()}
+              >
+                <i className="fa-solid fa-xmark" />
+              </button>
 
-            <div className={styles.modalImg}>
-              <figure>
-                <Image
-                  width={80}
-                  height={80}
-                  src={selectedTestimonies["img"] ?? "x"}
-                  alt={selectedTestimonies["name"] ?? "x"}
-                />
-              </figure>
-              <i className="fa-solid fa-quote-left" />
-            </div>
+              <div className={styles.modalImg}>
+                <figure>
+                  <Image
+                    width={80}
+                    height={80}
+                    src={selectedTestimonies["img"]}
+                    alt={selectedTestimonies["name"]}
+                  />
+                </figure>
+                <i className="fa-solid fa-quote-left" />
+              </div>
 
-            <div className={styles.modalContent}>
-              <h4 className="h3 modal-title">{selectedTestimonies["name"]}</h4>
-              <time dateTime="2021-06-14">
-                {selectedTestimonies["date-created"]}
-              </time>
-              <p>{selectedTestimonies["comment"]}</p>
+              <div className={styles.modalContent}>
+                <h4 className="h3 modal-title">
+                  {selectedTestimonies["name"]}
+                </h4>
+                <time dateTime="2021-06-14">
+                  {selectedTestimonies["date-created"]}
+                </time>
+                <p>{selectedTestimonies["comment"]}</p>
+              </div>
             </div>
-          </div>
+          )
         }
       />
 
@@ -210,28 +214,28 @@ const skills = [
 //===========================
 const testimonies = [
   {
-    img: "images/avatar-1.png",
+    img: "/images/avatar-1.png",
     name: "Bakare Emmanuel",
     comment:
       "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.",
     "date-created": "14 June, 2021",
   },
   {
-    img: "images/avatar-2.png",
+    img: "/images/avatar-2.png",
     name: "Elijah Raphael",
     comment:
       "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.",
     "date-created": "14 June, 2021",
   },
   {
-    img: "images/avatar-3.png",
+    img: "/images/avatar-3.png",
     name: "Tochi Juan",
     comment:
       "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.",
     "date-created": "14 June, 2021",
   },
   {
-    img: "images/avatar-4.png",
+    img: "/images/avatar-4.png",
     name: "Victor",
     comment:
       "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.",
@@ -245,22 +249,22 @@ const testimonies = [
 const clients = [
   {
     label: "Compuclick Software Limited",
-    image: "images/logo-1-color.png",
+    image: "/images/logo-1-color.png",
     url: "",
   },
   {
     label: "AssetMatrix MFB",
-    image: "images/logo-2-color.png",
+    image: "/images/logo-2-color.png",
     url: "",
   },
   {
     label: "CashMatrix",
-    image: "images/logo-3-color.png",
+    image: "/images/logo-3-color.png",
     url: "",
   },
   {
     label: "Okocha International",
-    image: "images/logo-4-color.png",
+    image: "/images/logo-4-color.png",
     url: "",
   },
 ];
