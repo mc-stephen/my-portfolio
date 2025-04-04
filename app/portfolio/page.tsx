@@ -142,7 +142,7 @@ const portfolio: Record<string, Record<string, string>[]> = {
     {
       title: "VideoMax",
       category: "Web Development",
-      image: "/images/videomax.png",
+      image: "/images/videomax.jpg",
       url: "https://videomax.axxellance.com",
     },
     {
