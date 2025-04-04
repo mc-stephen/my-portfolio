@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Chukwuemeka Stephen Michael",
-        url: "https://mc-stephen.com/mc-stephen.jpg",
+        url: "https://mc-stephen.dev/images/mc-stephen.jpg",
       },
     ],
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     site: "@mc-stephen123", // Change to your Twitter handle if you have one
     creator: "@mc-stephen",
     card: "summary_large_image",
-    images: ["https://mc-stephen.com/mc-stephen.jpg"],
+    images: ["https://mc-stephen.dev/images/mc-stephen.jpg"],
     title: "Chukwuemeka Stephen Michael | Software Engineer",
     description:
       "A software engineer specializing in modern web development, performance optimization, and scalable architecture.",
