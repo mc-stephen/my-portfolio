@@ -1,33 +1,23 @@
-# Stage 1: Build the Next.js application
-FROM node:18-alpine AS builder
+# Step 1: Use an official Node.js runtime as a parent image
+FROM node:23.1.0
 
+# Step 2: Set the working directory inside the container
 WORKDIR /app
 
-# Copy package files and install ALL dependencies (including devDependencies)
+# Step 3: Copy the package.json and package-lock.json (or yarn.lock) into the working directory
 COPY package*.json ./
-COPY tsconfig*.json ./
-RUN npm ci
 
-# Copy source files and build
+# Step 4: Install project dependencies
+RUN npm install
+
+# Step 5: Copy the rest of the application code into the container
 COPY . .
+
+# Step 6: Build the Next.js app for production
 RUN npm run build
 
-# Stage 2: Create production image
-FROM node:18-alpine AS production
-
-WORKDIR /app
-
-# Create non-root user
-# RUN addgroup -g 1001 -S nextjs && \
-#     adduser -S -u 1001 nextjs -G nextjs
-
-# Copy necessary files from builder
-COPY --from=builder --chown=nextjs:nextjs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nextjs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nextjs /app/public ./public
-
-USER nextjs
-
+# Step 7: Expose the port that Next.js will run on
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+# Step 8: Start the Next.js application in production mode
+CMD ["npm", "start"]
